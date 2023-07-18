@@ -9,3 +9,11 @@ This project aims to implement the factorisation of polynomials in OCaml.
 - `dune build`: build the current project
 - `dune exec fact`: execute the main file
 - `dune utop lib`: play with the lib files in the toplevel utop
+
+### Make warning non-fatal 
+Put that everywhere :)
+```dune
+(env
+  (dev
+    (flags (:standard -warn-error -A))))
+```

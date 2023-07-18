@@ -2,3 +2,6 @@
  (public_name fact)
  (name main)
  (libraries lib))
+(env
+  (dev
+    (flags (:standard -warn-error -A))))
