@@ -1,5 +1,13 @@
 open Lib
 
+(**
+ /\_/\
+( o.o )
+ > ^ <
+
+To protect the code from bugs
+*)
+
 let () = print_string "\n\n"
 let () = print_int (Cogs.f 2)
 let () = print_string "\n"

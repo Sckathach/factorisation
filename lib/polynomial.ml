@@ -29,3 +29,9 @@ let to_string (p : polynomial) : string =
                 String.sub s 2 (String.length s - 2)
             else
                 ""
+
+let modulo (n : int) (p : polynomial) : polynomial =
+    let rec aux acc = function
+        [] -> List.rev acc
+        | (x, y) :: q -> aux ((x mod n, y) :: acc) q
+    in aux [] p

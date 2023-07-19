@@ -10,3 +10,6 @@ val add : polynomial -> polynomial -> polynomial
 
 (** Convert a polynomial into a string : X³ + 3X² + 1 -> [(1, 3); (3, 2); (1, 0)] *)
 val to_string : polynomial -> string
+
+(** Returns P in Z/nZ[X] *)
+val modulo : int -> polynomial -> polynomial
