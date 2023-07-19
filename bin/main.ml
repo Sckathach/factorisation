@@ -1,6 +1,4 @@
 open Lib
-open Polynomial
-open Cogs
 
 let () = print_string "\n\n"
 let () = print_int (Cogs.f 2)
