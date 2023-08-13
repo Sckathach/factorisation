@@ -1,6 +1,7 @@
 exception BadType of string
 
 type polynomial = (int * int) list
+let pol = [(0, 3) ; (-1, 2); (0, 1) ; (2, 0)]
 
 let rec add (p : polynomial) (q : polynomial) : polynomial = match p, q with
 [], _ -> q
@@ -35,3 +36,6 @@ let modulo (n : int) (p : polynomial) : polynomial =
         [] -> List.rev acc
         | (x, y) :: q -> aux ((x mod n, y) :: acc) q
     in aux [] p
+
+let mult (x : int) (p : polynomial) : polynomial =
+    map (function (y, z) -> (x * y, z)) p

@@ -1,3 +1,5 @@
+open Floats
+
 exception Dimensions_mismatch
 exception Singular_matrix
 
@@ -94,6 +96,24 @@ let add_matrix a b =
             c
     else
         raise Dimensions_mismatch
+
+let equal a b =
+    let c = ref true in
+    let la = nb_lines a in
+    let lb = nb_lines b in
+    let ca = nb_columns a in
+    let cb = nb_columns b in
+    if (la = lb && ca = cb) then
+        begin
+            for i = 0 to (la-1) do
+                for j = 0 to (ca-1) do
+                    c := !c && (Floats.equal a.(i).(j) b.(i).(j))
+                done
+            done;
+            !c
+        end
+    else
+        false
 
 let trace m =
     let n = nb_lines m in
@@ -197,7 +217,7 @@ let rotation m =
     let n = nb_lines m in
     let p = nb_columns m in
     let t = make_matrix n p in
-    fill_matrix t (function i,j -> m.(i).(j));
+    fill_matrix t (function i,j -> m.(n-i-1).(p-j-1));
     t
 
 let invert_matrix m =
@@ -215,5 +235,3 @@ let invert_matrix m =
 
 let solve_system a y =
     mult_matrix (invert_matrix a) y
-
-let m = [|[|2.;5.;8.|];[|4.;7.;0.|];[|1.;9.;3.|]|]
