@@ -1,2 +1,6 @@
 (test
- (name fact))
+ (name tests)
+ (libraries lib))
+(env
+  (dev
+    (flags (:standard -warn-error -A))))
