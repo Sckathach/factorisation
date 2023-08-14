@@ -11,6 +11,13 @@ type polynomial = monomial list
 val add : polynomial -> polynomial -> polynomial
 (** wow so beautiful ! *)
 
+val sub : polynomial -> polynomial -> polynomial
+val to_string : polynomial -> string
+val mult_const : polynomial -> float -> polynomial
+val mult : polynomial -> polynomial -> polynomial
+val pow : polynomial -> int -> polynomial
+val eval : polynomial -> float -> float
+
 (** Convert a polynomial into a string : X³ + 3X² + 1 -> [(1, 3); (3, 2); (1, 0)] *)
 (* val to_string : polynomial -> string *)
 
