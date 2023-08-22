@@ -1,17 +1,10 @@
-let f x = x + 1
-
 let even n = n mod 2 = 0
 
-let exp x pow =
-    let rec aux b n acc =
-        if n = 0 then
-            acc
-        else
-            if even n then
-                aux (b*b) (n/2) acc
-            else
-                aux b (b-1) (acc * b)
-    in aux x pow 1
+let rec pow a = function
+    0 -> 1
+    | 1 -> a
+    | n -> let b = pow a (n / 2) in
+        b * b * (if n mod 2 = 0 then 1 else a)
 
 let rec gcd n m =
     if m = 0 then
