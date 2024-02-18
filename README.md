@@ -3,6 +3,8 @@
 ## Introduction 
 This project aims to implement the factorisation of polynomials in OCaml. 
 
+&rarr; TODO: Use OWL
+
 ## Dune 
 [Dune](https://dune.build/) is a build system for OCaml projects. Using it, you can build executables, libraries, run tests, and much more.
 ### Useful commands
